@@ -3,7 +3,7 @@
 int main(){
   FILE *file;
   char name[20];
-  file=fopen("test.txt","w");
+  file=fopen("test.txt","a");
   if(file==NULL){
     printf("File doesn't exist.\n");
   }
@@ -14,6 +14,7 @@ int main(){
     name[strcspn(name,"\n")]='\0';
     
     fputs(name,file);
+    fputs("\n",file);
     
     fclose(file);
   }
